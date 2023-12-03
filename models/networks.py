@@ -369,8 +369,11 @@ class ResnetGenerator(nn.Module):
                       nn.ReLU(True)]
 
         # #原版最后一层
-        model += [nn.ReflectionPad2d(3)]
-        model += [nn.Conv2d(ngf, output_nc, kernel_size=7, padding=0)]
+        model = [nn.ReflectionPad2d(3),
+                     #nn.Conv2d(input_nc, ngf, kernel_size=7, padding=0, bias=use_bias),
+                    Dynamic_conv2d(ngf, output_nc, kernel_size=7, ratio=0.25, padding=0),
+                    norm_layer(ngf),
+                    nn.ReLU(True)]
         model += [nn.Tanh()]
 
         self.model = nn.Sequential(*model)
