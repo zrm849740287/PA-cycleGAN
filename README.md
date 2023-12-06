@@ -1,7 +1,9 @@
 ## Prerequisites
 - Python 3
 - CPU or NVIDIA GPU + CUDA CuDNN
--This repository provides a PyTorch implementation of PDC-cycleGAN. Our model mainly makes modifications to the generator and loss function.
+
+This repository provides a PyTorch implementation of PDC-cycleGAN. Our model mainly makes modifications to the generator and loss function.
+This project is based on 'Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks'.
 
 ## Getting Started
 ### Installation
